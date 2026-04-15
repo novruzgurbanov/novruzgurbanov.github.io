@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 48px 20px;
+}
+
+.hero {
+  padding: 72px 0 40px;
+  border-bottom: 1px solid #d7e0ea;
+  margin-bottom: 40px;
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+  color: #0f172a;
+}
+
+h1 {
+  font-size: 2.6rem;
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 18px;
+}
+
+.subtitle {
+  color: #475569;
+  font-size: 1.15rem;
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+.section {
+  margin-bottom: 42px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #dbe4ee;
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+}
+
+.card p {
+  margin-bottom: 10px;
+}
+
+.tag {
+  display: inline-block;
+  background: #e8eef6;
+  color: #1e3a5f;
+  padding: 6px 10px;
+  border-radius: 999px;
+  margin: 4px 6px 0 0;
+  font-size: 0.9rem;
+}
+
+a {
+  color: #0f62fe;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+.small {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.contact a {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.footer {
+  border-top: 1px solid #d7e0ea;
+  padding-top: 24px;
+  color: #64748b;
+  font-size: 0.95rem;
+}
