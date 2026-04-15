@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Novruz Gurbanov | Portfolio</title>
+  <title>Novruz Gurbanov | APCS Engineer</title>
   <style>
     body {
       margin: 0;
@@ -12,36 +12,57 @@
       color: #e8ecf1;
       line-height: 1.6;
     }
+
     .container {
-      max-width: 900px;
+      max-width: 980px;
       margin: 0 auto;
       padding: 48px 20px;
     }
-    h1, h2 {
+
+    .hero {
+      padding: 72px 0 40px;
+      border-bottom: 1px solid #24304f;
+      margin-bottom: 40px;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      color: #ffffff;
+    }
+
+    h1 {
+      font-size: 2.6rem;
       margin-bottom: 12px;
     }
-    .hero {
-      padding: 72px 0 36px;
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 18px;
     }
+
     .subtitle {
       color: #9fb0c7;
-      font-size: 1.1rem;
-      margin-bottom: 24px;
+      font-size: 1.15rem;
+      margin-bottom: 20px;
+      max-width: 800px;
     }
+
+    .section {
+      margin-bottom: 42px;
+    }
+
     .card {
       background: #141b31;
       border: 1px solid #24304f;
       border-radius: 14px;
-      padding: 20px;
+      padding: 22px;
       margin-bottom: 18px;
     }
-    a {
-      color: #7cc4ff;
-      text-decoration: none;
+
+    .card p {
+      margin-bottom: 10px;
     }
-    a:hover {
-      text-decoration: underline;
-    }
+
     .tag {
       display: inline-block;
       background: #1d2742;
@@ -51,58 +72,128 @@
       margin: 4px 6px 0 0;
       font-size: 0.9rem;
     }
+
+    a {
+      color: #7cc4ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .small {
+      color: #9fb0c7;
+      font-size: 0.95rem;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .footer {
+      border-top: 1px solid #24304f;
+      padding-top: 24px;
+      color: #91a0b7;
+      font-size: 0.95rem;
+    }
   </style>
 </head>
 <body>
   <div class="container">
+
     <section class="hero">
       <h1>Novruz Gurbanov</h1>
       <p class="subtitle">
-        APCS Engineer | Mechanical Engineering Background | Building traceable, repeatable automation systems
+        APCS Engineer with a mechanical engineering background, focused on industrial automation,
+        production process improvement, machine troubleshooting, and traceable manufacturing workflows.
       </p>
       <p>
-        I work on production automation, machine reliability, PLC-based control, metrology integration,
-        and process traceability for industrial systems.
+        I work on building and improving automated production systems through PLC logic,
+        device integration, process monitoring, and practical engineering problem-solving on the factory floor.
       </p>
     </section>
 
-    <section>
-      <h2>Featured Case Studies</h2>
+    <section class="section">
+      <h2>What I Do</h2>
+      <div class="card">
+        <ul>
+          <li>Improve production process logic and machine behavior</li>
+          <li>Troubleshoot automation and control problems on manufacturing equipment</li>
+          <li>Build traceability and monitoring workflows for production data</li>
+          <li>Integrate sensors, PLC systems, and industrial communication modules</li>
+          <li>Support automation of repetitive factory tasks and process operations</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Featured Projects</h2>
 
       <div class="card">
         <h3>Rewinder Accuracy Recovery</h3>
-        <p>
-          Diagnosed and corrected rewinder accuracy problems by investigating the interaction between
-          machine behavior, PLC logic, and process conditions.
-        </p>
+        <p><strong>Challenge:</strong> A rewinder accuracy problem required deep investigation across machine behavior, PLC logic, and process conditions.</p>
+        <p><strong>Engineering:</strong> Analyzed the interaction between control logic and physical machine behavior, traced the root cause, and worked through the system step by step to identify what was actually affecting accuracy.</p>
+        <p><strong>Result:</strong> Built foundational practical experience in real production troubleshooting and established my first major automation problem-solving case.</p>
       </div>
 
       <div class="card">
-        <h3>Inline Metrology Traceability Pipeline</h3>
+        <h3>Inline Tape-Width Traceability Pipeline</h3>
+        <p><strong>Challenge:</strong> Width data needed to be measured, logged, transferred, and monitored in a more usable way for production work.</p>
+        <p><strong>Engineering:</strong> Integrated Keyence hardware, PLC-side logic, logging behavior, FTP-based transfer, and live monitoring workflow while diagnosing buffering and save-trigger issues.</p>
+        <p><strong>Result:</strong> Created a practical measurement and traceability workflow that improved visibility of production data during operation.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Systems and Skills</h2>
+      <div class="card">
+        <span class="tag">APCS / Automation</span>
+        <span class="tag">PLC Logic</span>
+        <span class="tag">Keyence PLC</span>
+        <span class="tag">Ladder Logic</span>
+        <span class="tag">Python</span>
+        <span class="tag">Production Troubleshooting</span>
+        <span class="tag">Industrial Networking</span>
+        <span class="tag">Sensors & Actuators</span>
+        <span class="tag">Process Improvement</span>
+        <span class="tag">Traceability</span>
+        <span class="tag">Mechanical Systems</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Career Direction</h2>
+      <div class="card">
         <p>
-          Built a tape-width measurement and live traceability workflow using Keyence hardware,
-          PLC logging, and PC-side monitoring.
+          I am developing toward roles that combine industrial automation, robotics,
+          production systems engineering, and eventually aerospace manufacturing automation.
+        </p>
+        <p class="small">
+          Current focus: strengthening PLC engineering, Structured Text, system documentation,
+          and broader automation system design.
         </p>
       </div>
     </section>
 
-    <section>
-      <h2>Systems</h2>
-      <span class="tag">Keyence PLC</span>
-      <span class="tag">Ladder Logic</span>
-      <span class="tag">Python</span>
-      <span class="tag">Metrology</span>
-      <span class="tag">Industrial Ethernet</span>
-      <span class="tag">Automation Debugging</span>
-      <span class="tag">Mechanical Systems</span>
+    <section class="section contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p><a href="mailto:nowruz.gurbanov@gmail.com">nowruz.gurbanov@gmail.com</a></p>
+        <p><a href="https://www.linkedin.com/in/novruz-gurbanov" target="_blank">LinkedIn</a></p>
+        <p><a href="https://github.com/novruzgurbanov" target="_blank">GitHub</a></p>
+      </div>
     </section>
 
-    <section style="margin-top: 36px;">
-      <h2>Contact</h2>
-      <p>Email: your-email@example.com</p>
-      <p>LinkedIn: <a href="#">Add your LinkedIn link here</a></p>
-      <p>GitHub: <a href="#">Add your GitHub profile link here</a></p>
-    </section>
+    <div class="footer">
+      <p>Built with GitHub Pages.</p>
+    </div>
+
   </div>
 </body>
 </html>
