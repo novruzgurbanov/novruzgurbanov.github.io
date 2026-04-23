@@ -1,1 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inline Width Traceability and Operator Monitoring System | Novruz Gurbanov</title>
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
 
+    .eyebrow {
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+
+    .project-hero {
+      padding: 52px 0 34px;
+      border-bottom: 1px solid #d7e0ea;
+      margin-bottom: 36px;
+    }
+
+    .metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .metric {
+      background: #ffffff;
+      border: 1px solid #dbe4ee;
+      border-radius: 14px;
+      padding: 16px 18px;
+      min-width: 180px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.15rem;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+
+    .note {
+      background: #eef5ff;
+      border-left: 4px solid #0f62fe;
+      padding: 14px 16px;
+      border-radius: 8px;
+      color: #1e293b;
+    }
+
+    .phase-list li {
+      margin-bottom: 10px;
+    }
+
+    .placeholder-figure {
+      border: 1px dashed #b8c7da;
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+      color: #64748b;
+      background: #f8fbff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <a class="back-link" href="/index.html">← Back to homepage</a>
+
+    <section class="project-hero">
+      <div class="eyebrow">Case Study</div>
+      <h1>Inline Width Traceability and Operator Monitoring System</h1>
+      <p class="subtitle">
+        Built a production-ready width logging and inspection workflow by acquiring assigned PLC data over EtherNet/IP,
+        logging it through a resilient Windows Service, and extending it into a tray-based operator monitoring and inspection tool.
+      </p>
+      <p>
+        This project started as a tape-width measurement and logging task, but evolved into a broader production
+        traceability system focused on data reliability, machine-state-aware logging, and operator usability.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>System Overview</h2>
+      <div class="card">
+        <p>
+          The width-measurement chain was established from the laser measurement hardware into the Keyence PLC,
+          then extended to PC-side data collection and operator tooling. The final system architecture centered on
+          EtherNet/IP acquisition of assigned PLC values such as motor-running state, width value, and rewinder position,
+          with the PC side split into a background service and a separate tray application.
+        </p>
+        <div class="placeholder-figure">
+          Add your architecture diagram here later<br />
+          Example: Sensor → amplifier → communication module → PLC → Windows Service → tray app / run files
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Challenge</h2>
+      <div class="card">
+        <p>
+          The production need was not just to save measurement data into CSV. The real challenge was to build
+          a reliable width-data workflow that could capture measurement values from the machine, log them only during
+          active rewinding, survive communication interruptions, and present the results in a form useful both during
+          operation and after the run.
+        </p>
+        <p>
+          Early work explored native PLC-side logging and FTP transfer in order to understand the machine’s built-in
+          logging behavior and limits. That investigation was useful for learning and validation, but it was not kept
+          as the final architecture.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Engineering Approach</h2>
+      <div class="card">
+        <ul class="phase-list">
+          <li>
+            <strong>Measurement path validation:</strong> established the communication chain from the width sensor system
+            into the PLC, confirmed live width data in the PLC, and prepared width, coordinate, direction, and logging-related values.
+          </li>
+          <li>
+            <strong>Early logging investigation:</strong> tested PLC-side logging and FTP transfer to understand native
+            logging/tracing behavior, file creation, and transfer timing.
+          </li>
+          <li>
+            <strong>EtherNet/IP backend:</strong> moved to PC-side logging through EtherNet/IP, starting from a minimal
+            read test and evolving it into a reconnect-aware C#/.NET Windows Service.
+          </li>
+          <li>
+            <strong>Machine-state-aware logging:</strong> assigned and read a maintained motor-running state together with
+            width value and rewinder position so logging occurred only during active operation.
+          </li>
+          <li>
+            <strong>Operator tooling:</strong> extended the backend into a run-based system with metadata, violations output,
+            live monitoring, and historical inspection through a tray application.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Final Architecture</h2>
+      <div class="card">
+        <p>
+          The final solution used assigned PLC data over EtherNet/IP rather than relying on FTP as the production data path.
+          A background Windows Service handled PLC communication, run detection, logging, and file generation. A separate
+          tray application handled operator setup, live monitoring, and completed-run inspection. The later V2 work also
+          shifted the data model from daily files to per-run structured logging with metadata and violations output.
+        </p>
+      </div>
+
+      <div class="metrics">
+        <div class="metric">
+          <strong>EtherNet/IP</strong>
+          <span>Assigned PLC data acquisition for motor-running state, width value, and rewinder position</span>
+        </div>
+        <div class="metric">
+          <strong>Windows Service</strong>
+          <span>Background logging with reconnect behavior and machine-state-aware sampling</span>
+        </div>
+        <div class="metric">
+          <strong>Tray Application</strong>
+          <span>Operator setup, live monitoring, and completed-run inspection</span>
+        </div>
+        <div class="metric">
+          <strong>Run-Based Output</strong>
+          <span>Per-run files, metadata, violations logging, and historical review workflow</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What Was Built</h2>
+      <div class="card">
+        <p><strong>Backend / service side</strong></p>
+        <ul>
+          <li>PLC EtherNet/IP communication</li>
+          <li>conditional logging based on active machine state</li>
+          <li>automatic reconnect behavior after communication loss</li>
+          <li>status/event logging separate from measurement data</li>
+          <li>run-based file creation, metadata output, and violations output</li>
+        </ul>
+
+        <p><strong>Operator / inspection side</strong></p>
+        <ul>
+          <li>next-run setup fields</li>
+          <li>live monitor</li>
+          <li>live tape diagram</li>
+          <li>historical run inspection</li>
+          <li>marker-based point inspection</li>
+          <li>zoom and pan controls</li>
+          <li>synchronized tape view and width trendline</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Result</h2>
+      <div class="card">
+        <p>
+          The project progressed from a basic measurement-logging task into a structured, operator-ready system.
+          The final solution provided reliable EtherNet/IP acquisition, resilient background logging, run-based
+          organization of output files, and an operator-facing interface for both live monitoring and post-run inspection.
+        </p>
+        <p>
+          More importantly, the project changed the workflow from “collect raw data somehow” to “make width data usable
+          for production decisions, inspection, and traceability.”
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Early Investigation Note</h2>
+      <div class="card">
+        <p class="note">
+          An initial FTP-based logging path was intentionally explored first to understand native PLC logging behavior,
+          transfer timing, and practical limits. That phase was a learning and validation step requested early in the work.
+          The final production-oriented solution was built around EtherNet/IP acquisition and PC-side logging instead.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What This Project Demonstrates</h2>
+      <div class="card">
+        <p>
+          This project demonstrates systems integration across industrial sensing, PLC data handling, EtherNet/IP communication,
+          software reliability, deployment thinking, and operator workflow design. It also shows my preferred engineering path:
+          first make the data path work, then make it reliable, then make it usable.
+        </p>
+      </div>
+    </section>
+
+    <div class="footer">
+      <p>Portfolio case study by Novruz Gurbanov</p>
+    </div>
+
+  </div>
+</body>
+</html>
