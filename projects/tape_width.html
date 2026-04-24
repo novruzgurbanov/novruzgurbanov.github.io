@@ -61,13 +61,16 @@
       margin-bottom: 10px;
     }
 
-    .placeholder-figure {
-      border: 1px dashed #b8c7da;
-      border-radius: 12px;
-      padding: 28px;
-      text-align: center;
-      color: #64748b;
-      background: #f8fbff;
+    .figure-block {
+      margin-top: 22px;
+    }
+
+    .ui-shot {
+      margin-top: 24px;
+    }
+
+    .ui-shot:first-of-type {
+      margin-top: 18px;
     }
   </style>
 </head>
@@ -98,14 +101,18 @@
           EtherNet/IP acquisition of assigned PLC values such as motor-running state, width value, and rewinder position,
           with the PC side split into a background service and a separate tray application.
         </p>
-        <img
-          src="/assets/images/width_log_system.png"
-          alt="System architecture of the inline width traceability and operator monitoring system"
-          class="project-image-large"
-        />
-        <p class="figure-caption">
-          Final production-oriented architecture used for inline width traceability, background logging, and operator inspection.
-        </p>
+
+        <div class="figure-block">
+          <img
+            src="/assets/images/width_log_system.png"
+            alt="System architecture of the inline width traceability and operator monitoring system"
+            class="project-image-large"
+          />
+          <p class="figure-caption">
+            Final production-oriented architecture used for inline width traceability, background logging, and operator inspection.
+          </p>
+        </div>
+      </div>
     </section>
 
     <section class="section">
@@ -180,6 +187,41 @@
         <div class="metric">
           <strong>Run-Based Output</strong>
           <span>Per-run files, metadata, violations logging, and historical review workflow</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Operator Interface and Run Inspection</h2>
+      <div class="card">
+        <p>
+          To make the system useful beyond background logging, I extended it into an operator-facing tray
+          application. The interface was designed for two main use cases: live monitoring during active
+          rewinding, and completed-run inspection after logging finished.
+        </p>
+
+        <div class="ui-shot">
+          <img
+            src="/assets/images/width_logger_live_ui.png"
+            alt="Example live monitoring view of the width logger tray application"
+            class="project-image-large"
+          />
+          <p class="figure-caption">
+            Example live-monitor view showing machine status, current width information, live tape diagram,
+            and next-run setup.
+          </p>
+        </div>
+
+        <div class="ui-shot">
+          <img
+            src="/assets/images/width_logger_inspection_ui.png"
+            alt="Example inspection view of the width logger tray application"
+            class="project-image-large"
+          />
+          <p class="figure-caption">
+            Example inspection view showing completed-run analysis with width trend, tape map, marker-based
+            inspection, and run summary.
+          </p>
         </div>
       </div>
     </section>
