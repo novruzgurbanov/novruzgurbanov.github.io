@@ -4,106 +4,206 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Novruz Gurbanov | APCS Engineer</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta
+    name="description"
+    content="Portfolio of Novruz Gurbanov — APCS Engineer focused on industrial automation, PLC systems, traceability workflows, and production reliability."
+  />
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-  <div class="container">
-
-    <section class="hero">
-      <h1>Novruz Gurbanov</h1>
-      <p class="subtitle">
-        APCS Engineer with a mechanical engineering background, focused on industrial automation,
-        production process improvement, machine troubleshooting, and traceable manufacturing workflows.
-      </p>
-      <p>
-        I work on building and improving automated production systems through PLC logic,
-        device integration, process monitoring, and practical engineering problem-solving on the factory floor.
-      </p>
-    </section>
-
-    <section class="section">
-      <h2>What I Do</h2>
-      <div class="card">
-        <ul>
-          <li>Improve production process logic and machine behavior</li>
-          <li>Troubleshoot automation and control problems on manufacturing equipment</li>
-          <li>Build traceability and monitoring workflows for production data</li>
-          <li>Integrate sensors, PLC systems, and industrial communication modules</li>
-          <li>Support automation of repetitive factory tasks and process operations</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Featured Projects</h2>
-    
-      <a href="projects/rewinder.html" class="project-card-link">
-        <div class="card project-card">
-          <h3>Rewinder Accuracy Root-Cause Investigation</h3>
-          <p><strong>Challenge:</strong> Production rewinders were reporting inconsistent tape lengths, affecting measurement reliability across process steps.</p>
-          <p><strong>Engineering:</strong> Verified PLC distance logic, hardware assumptions, encoder pulse consistency, and reel behavior using an independent vision-based check before isolating the true physical cause.</p>
-          <p><strong>Result:</strong> Identified top-wheel effective diameter variation as the root cause of systematic length error and produced the technical evidence used for supplier-side corrective action.</p>
-          <p class="project-cta">Read case study <span>→</span></p>
-        </div>
-      </a>
-    
-      <a href="projects/tape_width.html" class="project-card-link">
-        <div class="card project-card">
-          <h3>Inline Width Traceability and Operator Monitoring System</h3>
-          <p><strong>Challenge:</strong> Production needed a reliable way to capture width data, associate it with machine motion, and make it usable during operation and after the run.</p>
-          <p><strong>Engineering:</strong> Moved from early PLC-side logging investigation to a final EtherNet/IP-based architecture with a reconnect-aware Windows Service and a tray-based operator inspection tool.</p>
-          <p><strong>Result:</strong> Built a structured traceability workflow with live monitoring, run-based files and metadata, and completed-run inspection tools.</p>
-          <p class="project-cta">Read case study <span>→</span></p>
-        </div>
-      </a>
-    </section>
-
-    <section class="section">
-      <h2>Systems and Skills</h2>
-      <div class="card">
-        <span class="tag">APCS / Automation</span>
-        <span class="tag">PLC Logic</span>
-        <span class="tag">Keyence PLC</span>
-        <span class="tag">Ladder Logic</span>
-        <span class="tag">Python</span>
-        <span class="tag">Production Troubleshooting</span>
-        <span class="tag">Industrial Networking</span>
-        <span class="tag">Sensors &amp; Actuators</span>
-        <span class="tag">Process Improvement</span>
-        <span class="tag">Traceability</span>
-        <span class="tag">Mechanical Systems</span>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Career Direction</h2>
-      <div class="card">
-        <p>
-          I am developing toward roles that combine industrial automation, robotics,
-          production systems engineering, and eventually aerospace manufacturing automation.
-        </p>
-        <p class="small">
-          Current focus: strengthening PLC engineering, Structured Text, system documentation,
-          and broader automation system design.
-        </p>
-      </div>
-    </section>
-
-    <section class="section contact">
-      <h2>Contact</h2>
-      <div class="card">
-        <p><a href="mailto:nowruz.gurbanov@gmail.com">nowruz.gurbanov@gmail.com</a></p>
-        <p><a href="https://www.linkedin.com/in/novruz-gurbanov" target="_blank">LinkedIn</a></p>
-        <p><a href="https://github.com/novruzgurbanov" target="_blank">GitHub</a></p>
-      </div>
-    </section>
-
-    <div class="footer">
-      <p>Built with GitHub Pages.</p>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#home" class="nav-brand">Novruz Gurbanov</a>
+      <nav class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#direction">Direction</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
-  </div>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div>
+          <div class="eyebrow">APCS Engineer · Industrial Automation · Production Systems</div>
+          <h1>Building reliable automation systems for real manufacturing environments.</h1>
+          <p class="subtitle">
+            I work at the intersection of PLC logic, process troubleshooting, traceability, and
+            operator-focused tooling. My portfolio documents how machine-level problems are turned
+            into structured engineering solutions.
+          </p>
 
-  <script src="script.js"></script>
+          <div class="badges">
+            <span class="badge">Industrial Automation</span>
+            <span class="badge">Keyence PLC</span>
+            <span class="badge">EtherNet/IP</span>
+            <span class="badge">Traceability</span>
+            <span class="badge">Production Reliability</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#projects" class="button">View case studies</a>
+            <a href="assets/docs/resume.pdf" class="button-secondary">Download resume</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Current focus</h3>
+          <p>
+            APCS engineering for manufacturing systems, with growing emphasis on machine integration,
+            reliable data acquisition, structured troubleshooting, and operator usability.
+          </p>
+
+          <h3 style="margin-top: 24px;">What I bring</h3>
+          <p>
+            Mechanical engineering background, real factory-floor experience, and a practical approach
+            that connects hardware behavior, control logic, and production outcomes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <h2>What I do</h2>
+        <div class="cards-grid">
+          <div class="card">
+            <h3>Automation and control</h3>
+            <p>
+              PLC-based process logic, machine-state handling, signal interpretation, and structured
+              automation improvements for production equipment.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Traceability and logging</h3>
+            <p>
+              Design of data acquisition, logging, monitoring, and inspection workflows that make
+              machine data usable for operations, troubleshooting, and quality review.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Root-cause engineering</h3>
+            <p>
+              Investigation across mechanics, sensors, controls, and process behavior to isolate the
+              true source of production issues and support repeatable corrective action.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <h2>Featured case studies</h2>
+
+        <a href="projects/rewinder.html" class="project-card-link">
+          <div class="card project-card">
+            <h3>Rewinder Accuracy Root-Cause Investigation</h3>
+            <p>
+              <strong>Challenge:</strong> Production rewinders were reporting inconsistent tape lengths,
+              affecting downstream measurement confidence and process reliability.
+            </p>
+            <p>
+              <strong>Engineering:</strong> Verified PLC distance logic, encoder assumptions, and machine
+              behavior before isolating the true physical source of systematic length error.
+            </p>
+            <p>
+              <strong>Result:</strong> Produced the technical evidence that supported supplier-side corrective
+              action and improved confidence in rewinder accuracy analysis.
+            </p>
+            <p class="project-cta">Read case study <span>→</span></p>
+          </div>
+        </a>
+
+        <div style="height: 18px;"></div>
+
+        <a href="projects/tape-width.html" class="project-card-link">
+          <div class="card project-card">
+            <h3>Inline Width Traceability and Operator Monitoring System</h3>
+            <p>
+              <strong>Challenge:</strong> Production needed a reliable way to capture width data,
+              relate it to machine motion, and make it useful during operation and after the run.
+            </p>
+            <p>
+              <strong>Engineering:</strong> Moved from early PLC-side logging investigation to a final
+              EtherNet/IP-based architecture with a reconnect-aware Windows Service and tray-based
+              operator inspection workflow.
+            </p>
+            <p>
+              <strong>Result:</strong> Built a structured traceability system with live monitoring,
+              run-based logging, metadata, and completed-run inspection tools.
+            </p>
+            <p class="project-cta">Read case study <span>→</span></p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="direction">
+      <div class="container">
+        <h2>Where I’m heading</h2>
+        <div class="card">
+          <p>
+            My long-term direction is toward roles that combine industrial automation, robotics,
+            advanced manufacturing systems, and aerospace-grade reliability thinking.
+          </p>
+          <p>
+            I am building toward stronger capability in structured text, modern controls software,
+            system integration, and engineering workflows that connect machine hardware to robust,
+            production-ready software.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <h2>About</h2>
+        <div class="card">
+          <p>
+            I am an APCS Engineer with a mechanical engineering background and hands-on experience in
+            manufacturing, process control, and equipment-related troubleshooting.
+          </p>
+          <p>
+            My work is centered on making machines more understandable, more reliable, and more useful
+            to the people operating them. That means not only writing or adjusting logic, but also
+            understanding why the code matters to the physical process.
+          </p>
+          <p>
+            This portfolio is built as a library of technical case studies rather than a generic personal
+            site. Each project focuses on challenge, engineering approach, and result.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="card">
+          <h2>Let’s connect</h2>
+          <p>
+            I’m interested in industrial automation, production systems, robotics, and long-term work
+            that moves toward aerospace and advanced manufacturing environments.
+          </p>
+          <div class="hero-actions">
+            <a href="mailto:nowruz.gurbanov@gmail.com" class="button">Email me</a>
+            <a href="https://www.linkedin.com/in/novruz-gurbanov" class="button-secondary">LinkedIn</a>
+            <a href="https://github.com/novruzgurbanov" class="button-secondary">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Novruz Gurbanov · APCS Engineer · Industrial Automation Portfolio</p>
+    </div>
+  </footer>
 </body>
 </html>
