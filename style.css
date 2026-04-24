@@ -385,25 +385,36 @@ strong {
 }
 
 .project-hero {
-  padding: 36px 0 24px;
+  padding: 28px 0 20px;
   border-bottom: 1px solid var(--line);
-  margin-bottom: 36px;
+  margin-bottom: 32px;
 }
 
 .project-hero .eyebrow {
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .project-hero h1 {
-  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-size: clamp(2rem, 3vw, 3rem);
   line-height: 1.08;
-  max-width: 10ch;
-  margin-bottom: 20px;
+  max-width: 16ch;
+  margin-bottom: 16px;
 }
 
 .project-hero p {
-  max-width: 900px;
-  font-size: 1.02rem;
+  max-width: 920px;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .project-hero h1 {
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+    max-width: none;
+  }
+
+  .project-hero p {
+    font-size: 0.98rem;
+  }
 }
 
 .figure-block {
