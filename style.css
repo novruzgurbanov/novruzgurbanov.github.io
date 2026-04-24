@@ -707,3 +707,13 @@ strong {
     margin-top: 32px;
   }
 }
+
+#operator-interface h2,
+.operator-interface-section h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.ui-card .figure-caption {
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
