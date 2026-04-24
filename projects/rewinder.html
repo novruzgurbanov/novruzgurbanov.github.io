@@ -30,7 +30,7 @@
 
     <section class="section">
       <h2>System Overview</h2>
-      <div class="card">
+      <div class="card reveal">
         <p>
           The rewinder system measures tape length during production and depends on stable mechanical
           contact, correct PLC-side logic, and reliable assumptions about how rotation translates into
@@ -52,7 +52,7 @@
 
     <section class="section">
       <h2>Challenge</h2>
-      <div class="card">
+      <div class="card reveal">
         <p>
           The factory was seeing systematic rewinder length inaccuracies. The challenge was to determine whether
           the error came from PLC logic, encoder interpretation, measurement assumptions, or physical machine behavior.
@@ -66,7 +66,7 @@
 
     <section class="section">
       <h2>Engineering Approach</h2>
-      <div class="card">
+      <div class="card reveal">
         <ul class="phase-list">
           <li>
             <strong>Control-side review:</strong> checked the rewinder logic and distance-calculation assumptions to determine whether the PLC program itself could explain the mismatch.
@@ -100,7 +100,7 @@
 
     <section class="section">
       <h2>Result</h2>
-      <div class="card">
+      <div class="card reveal">
         <p>
           I prepared and presented the investigation summary to the machine supplier, Sanki. The final corrective action
           was then implemented on the supplier side through calibration-factor-based correction using a 1000 m reference tape.
@@ -111,7 +111,7 @@
         </p>
       </div>
 
-      <div class="metrics">
+      <div class="metrics reveal">
         <div class="metric">
           <strong>Investigation Type</strong>
           <span>Root-cause analysis across PLC logic and machine mechanics</span>
@@ -129,7 +129,7 @@
 
     <section class="section">
       <h2>What This Project Demonstrates</h2>
-      <div class="card">
+      <div class="card reveal">
         <ul class="project-summary-list">
           <li>Ability to investigate production problems without assuming the PLC is always the cause</li>
           <li>Mechanical reasoning applied to automation and measurement systems</li>
