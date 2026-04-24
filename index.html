@@ -100,47 +100,89 @@
     <section class="section" id="projects">
       <div class="container">
         <h2>Featured case studies</h2>
-
-        <a href="projects/rewinder.html" class="project-card-link">
-          <div class="card project-card">
-            <h3>Rewinder Accuracy Root-Cause Investigation</h3>
-            <p>
-              <strong>Challenge:</strong> Production rewinders were reporting inconsistent tape lengths,
-              affecting downstream measurement confidence and process reliability.
-            </p>
-            <p>
-              <strong>Engineering:</strong> Verified PLC distance logic, encoder assumptions, and machine
-              behavior before isolating the true physical source of systematic length error.
-            </p>
-            <p>
-              <strong>Result:</strong> Produced the technical evidence that supported supplier-side corrective
-              action and improved confidence in rewinder accuracy analysis.
-            </p>
-            <p class="project-cta">Read case study <span>→</span></p>
-          </div>
-        </a>
-
-        <div style="height: 18px;"></div>
-
-        <a href="projects/tape-width.html" class="project-card-link">
-          <div class="card project-card">
-            <h3>Inline Width Traceability and Operator Monitoring System</h3>
-            <p>
-              <strong>Challenge:</strong> Production needed a reliable way to capture width data,
-              relate it to machine motion, and make it useful during operation and after the run.
-            </p>
-            <p>
-              <strong>Engineering:</strong> Moved from early PLC-side logging investigation to a final
-              EtherNet/IP-based architecture with a reconnect-aware Windows Service and tray-based
-              operator inspection workflow.
-            </p>
-            <p>
-              <strong>Result:</strong> Built a structured traceability system with live monitoring,
-              run-based logging, metadata, and completed-run inspection tools.
-            </p>
-            <p class="project-cta">Read case study <span>→</span></p>
-          </div>
-        </a>
+        <p class="section-intro">
+          These projects are documented as engineering case studies. Each one focuses on the production
+          challenge, the technical reasoning used to investigate it, and the resulting system or corrective outcome.
+        </p>
+    
+        <div class="projects-stack">
+    
+          <a href="projects/rewinder.html" class="project-card-link">
+            <div class="card project-card project-preview">
+              <div class="project-preview-copy">
+                <div class="project-tags">
+                  <span class="project-tag">Root Cause Analysis</span>
+                  <span class="project-tag">PLC Validation</span>
+                  <span class="project-tag">Production Reliability</span>
+                </div>
+    
+                <h3>Rewinder Accuracy Root-Cause Investigation</h3>
+    
+                <p>
+                  <strong>Challenge:</strong> Production rewinders were reporting inconsistent tape lengths,
+                  affecting downstream measurement confidence and process reliability.
+                </p>
+                <p>
+                  <strong>Engineering:</strong> Verified PLC distance logic, encoder assumptions, and machine
+                  behavior before isolating the true physical source of systematic length error.
+                </p>
+                <p>
+                  <strong>Result:</strong> Produced the technical evidence that supported supplier-side corrective
+                  action and improved confidence in rewinder accuracy analysis.
+                </p>
+    
+                <p class="project-cta">Read case study <span>→</span></p>
+              </div>
+    
+              <div class="project-preview-visual">
+                <img
+                  src="/assets/images/rewinder_machine.png"
+                  alt="Simplified rewinder system block diagram"
+                  class="project-preview-image"
+                />
+              </div>
+            </div>
+          </a>
+    
+          <a href="projects/tape-width.html" class="project-card-link">
+            <div class="card project-card project-preview">
+              <div class="project-preview-copy">
+                <div class="project-tags">
+                  <span class="project-tag">EtherNet/IP</span>
+                  <span class="project-tag">Traceability</span>
+                  <span class="project-tag">Operator Tooling</span>
+                </div>
+    
+                <h3>Inline Width Traceability and Operator Monitoring System</h3>
+    
+                <p>
+                  <strong>Challenge:</strong> Production needed a reliable way to capture width data,
+                  relate it to machine motion, and make it useful during operation and after the run.
+                </p>
+                <p>
+                  <strong>Engineering:</strong> Moved from early PLC-side logging investigation to a final
+                  EtherNet/IP-based architecture with a reconnect-aware Windows Service and tray-based
+                  operator inspection workflow.
+                </p>
+                <p>
+                  <strong>Result:</strong> Built a structured traceability system with live monitoring,
+                  run-based logging, metadata, and completed-run inspection tools.
+                </p>
+    
+                <p class="project-cta">Read case study <span>→</span></p>
+              </div>
+    
+              <div class="project-preview-visual">
+                <img
+                  src="/assets/images/width_log_system.png"
+                  alt="Width logging system architecture diagram"
+                  class="project-preview-image"
+                />
+              </div>
+            </div>
+          </a>
+    
+        </div>
       </div>
     </section>
 
