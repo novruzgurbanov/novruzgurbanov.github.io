@@ -5,58 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rewinder Accuracy Root-Cause Investigation | Novruz Gurbanov</title>
   <link rel="stylesheet" href="/style.css" />
-  <style>
-    .back-link {
-      display: inline-block;
-      margin-bottom: 20px;
-      font-weight: bold;
-    }
-
-    .metrics {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 16px;
-    }
-
-    .metric {
-      background: #ffffff;
-      border: 1px solid #dbe4ee;
-      border-radius: 14px;
-      padding: 16px 18px;
-      min-width: 180px;
-      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
-    }
-
-    .metric strong {
-      display: block;
-      font-size: 1.2rem;
-      color: #0f172a;
-      margin-bottom: 6px;
-    }
-
-    .eyebrow {
-      color: #64748b;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.85rem;
-      margin-bottom: 8px;
-    }
-
-    .project-hero {
-      padding: 52px 0 34px;
-      border-bottom: 1px solid #d7e0ea;
-      margin-bottom: 36px;
-    }
-
-    .note {
-      background: #eef5ff;
-      border-left: 4px solid #0f62fe;
-      padding: 14px 16px;
-      border-radius: 8px;
-      color: #1e293b;
-    }
-  </style>
 </head>
 <body>
   <div class="container">
@@ -67,12 +15,13 @@
       <div class="eyebrow">Case Study</div>
       <h1>Rewinder Accuracy Root-Cause Investigation</h1>
       <p class="subtitle">
-        Identified the source of systematic length error across production rewinders by validating PLC distance logic,
-        encoder behavior, and physical machine geometry before supplier-side correction.
+        Investigated a production rewinder accuracy problem by validating control logic, machine behavior,
+        and physical assumptions until the true source of systematic length error was isolated.
       </p>
       <p>
-        This project was one of my first major real factory troubleshooting investigations. I did not own the OEM corrective implementation,
-        but I led the investigation that made corrective action possible.
+        This was one of my first larger automation-related investigations in production. Although the final
+        corrective action was implemented by the machine supplier, my role was to identify and structure the
+        technical evidence needed to explain the problem clearly.
       </p>
     </section>
 
@@ -80,33 +29,21 @@
       <h2>System Overview</h2>
       <div class="card">
         <p>
-          To explain the investigation clearly without exposing factory-specific details, I created a simplified
-          block diagram of the rewinder system. It shows the overall machine layout, tape path, operator interface,
-          and the main mechanical elements involved in the accuracy problem.
+          The rewinder system measures tape length during production and depends on stable mechanical
+          contact, correct PLC-side logic, and reliable assumptions about how rotation translates into
+          linear movement. The investigation required separating software assumptions from physical machine behavior.
         </p>
-        <img
-          src="/assets/images/rewinder_machine.png"
-          alt="Simplified block diagram of the rewinder system and tape path"
-          class="project-image-large"
-        />
-        <p class="figure-caption">
-          Simplified block diagram of the rewinder system and tape path.
-        </p>
-      </div>
-    </section>
 
-    <section class="section">
-      <h2>Why It Mattered</h2>
-      <div class="card">
-        <p>
-          In our production flow, rewinders were used before and after multiple process steps for measuring tape length,
-          cutting material, and isolating bad-quality areas. Because raw Hastelloy came in kilograms rather than accurately
-          measured length, rewinder accuracy directly affected both cost-per-meter and quality handling decisions.
-        </p>
-        <p>
-          The problem was first noticed because tape length information after different process stages did not match,
-          including discrepancies observed around EP, IBAD, and copper-plating-related work.
-        </p>
+        <div class="figure-block">
+          <img
+            src="/assets/images/rewinder_machine.png"
+            alt="Simplified rewinder system block diagram"
+            class="project-image-large"
+          />
+          <p class="figure-caption">
+            Simplified block diagram of the rewinder machine and tape path used to explain the investigation safely without exposing proprietary details.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -114,12 +51,12 @@
       <h2>Challenge</h2>
       <div class="card">
         <p>
-          Production rewinders were reporting inconsistent tape lengths. The main challenge was that the error could have come
-          from several places: PLC math, encoder counting, motion hardware behavior, or the mechanical geometry of the rewinder itself.
+          The factory was seeing systematic rewinder length inaccuracies. The challenge was to determine whether
+          the error came from PLC logic, encoder interpretation, measurement assumptions, or physical machine behavior.
         </p>
         <p>
-          The investigation had to be done carefully because a wrong conclusion would waste engineering time and potentially push
-          the factory toward the wrong fix.
+          At this stage, it was important not to jump to conclusions. The main task was to verify each plausible source
+          of error one by one and build a technically defensible explanation.
         </p>
       </div>
     </section>
@@ -127,44 +64,34 @@
     <section class="section">
       <h2>Engineering Approach</h2>
       <div class="card">
-        <p>
-          I approached the problem by ruling out possible causes step by step instead of assuming the issue was purely mechanical or purely software.
-        </p>
-        <p>
-          I first verified the controller-side logic and math used for travelled distance and line speed. Then I checked technical hardware details
-          such as maximum RPM and response-frequency assumptions. After that, I wrote a computer-vision script to independently count reel revolutions
-          and compare them against PLC-side counting. I also checked encoder pulse consistency directly. Only after those paths remained consistent
-          did I move to physical caliper measurements of the top wheel.
-        </p>
+        <ul class="phase-list">
+          <li>
+            <strong>Control-side review:</strong> checked the rewinder logic and distance-calculation assumptions to determine whether the PLC program itself could explain the mismatch.
+          </li>
+          <li>
+            <strong>Independent validation:</strong> compared the rewinder’s reported length behavior against independent observation methods rather than trusting only machine output.
+          </li>
+          <li>
+            <strong>Mechanical reasoning:</strong> evaluated how top-wheel contact and changing effective diameter could influence real linear distance measurement.
+          </li>
+          <li>
+            <strong>Problem framing:</strong> structured the findings clearly enough that the machine supplier could review the issue and take responsibility for corrective action.
+          </li>
+        </ul>
       </div>
     </section>
 
     <section class="section">
-      <h2>What I Found</h2>
-      <div class="card">
+      <h2>Key Finding</h2>
+      <div class="card callout-card">
         <p>
-          The root cause was not PLC miscalculation and not encoder inconsistency. The real issue was effective top-wheel diameter variation,
-          especially the difference between the diameter at the middle contact region where the tape actually travelled and the perpendicular/side measurement.
+          The investigation showed that the main issue was not a simple PLC bug. The root cause was tied to
+          the machine’s physical measurement behavior — specifically the changing effective diameter / contact behavior
+          of the top wheel during rewinding, which created systematic length error.
         </p>
         <p>
-          That meant a rewinder could look dimensionally acceptable from one measurement method while still producing accumulated length error
-          in real operating conditions.
+          That finding shifted the problem from “software malfunction” to “measurement method and machine mechanics.”
         </p>
-      </div>
-
-      <div class="metrics">
-        <div class="metric">
-          <strong>Up to +2.245 m</strong>
-          <span>Error observed over 1000 m on one rewinder</span>
-        </div>
-        <div class="metric">
-          <strong>Up to +6.29 m</strong>
-          <span>Error observed over 2500 m in another comparison set</span>
-        </div>
-        <div class="metric">
-          <strong>99.88–100.24 mm</strong>
-          <span>Measured top-wheel diameter range shown in the summary</span>
-        </div>
       </div>
     </section>
 
@@ -172,33 +99,40 @@
       <h2>Result</h2>
       <div class="card">
         <p>
-          I produced the technical evidence package and presentation that established the root cause and supported supplier-side corrective action.
-          The machine builder later applied a calibration-factor-based correction using a 1000 m reference tape.
+          I prepared and presented the investigation summary to the machine supplier, Sanki. The final corrective action
+          was then implemented on the supplier side through calibration-factor-based correction using a 1000 m reference tape.
         </p>
         <p>
-          My contribution was the investigation, proof structure, and root-cause isolation that enabled the responsible OEM to act with confidence.
+          My direct contribution was identifying the actual problem pattern, reducing ambiguity, and producing the technical
+          explanation that allowed supplier-side corrective work to move forward.
         </p>
       </div>
-    </section>
 
-    <section class="section">
-      <h2>My Role vs OEM Responsibility</h2>
-      <div class="card">
-        <p class="note">
-          I did not implement the final OEM correction myself. My role was to identify the true failure mode,
-          validate it with evidence, and communicate the findings clearly enough for corrective action to be taken by the responsible machine builder.
-        </p>
+      <div class="metrics">
+        <div class="metric">
+          <strong>Investigation Type</strong>
+          <span>Root-cause analysis across PLC logic and machine mechanics</span>
+        </div>
+        <div class="metric">
+          <strong>Main Value</strong>
+          <span>Turned an unclear production issue into a structured engineering finding</span>
+        </div>
+        <div class="metric">
+          <strong>Outcome</strong>
+          <span>Supported supplier-side calibration-based corrective action</span>
+        </div>
       </div>
     </section>
 
     <section class="section">
       <h2>What This Project Demonstrates</h2>
       <div class="card">
-        <p>
-          This project shows how I approach production problems as a systems engineer: checking control logic, validating machine behavior independently,
-          and connecting physical hardware reality back to automation assumptions. It also reflects an important engineering habit I want to carry forward:
-          separate root-cause identification from ownership of final corrective action.
-        </p>
+        <ul class="project-summary-list">
+          <li>Ability to investigate production problems without assuming the PLC is always the cause</li>
+          <li>Mechanical reasoning applied to automation and measurement systems</li>
+          <li>Structured communication of technical findings to external machine suppliers</li>
+          <li>Early evidence of systems-level troubleshooting in a manufacturing environment</li>
+        </ul>
       </div>
     </section>
 
