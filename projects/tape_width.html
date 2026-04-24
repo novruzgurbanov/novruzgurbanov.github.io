@@ -29,7 +29,7 @@
 
     <section class="section">
       <h2>System Overview</h2>
-      <div class="card">
+      <div class="card reveal">
         <p>
           The width-measurement chain was established from the laser measurement hardware into the Keyence PLC,
           then extended to PC-side data collection and operator tooling. The final system architecture centered on
@@ -52,7 +52,7 @@
 
     <section class="section">
       <h2>Challenge</h2>
-      <div class="card">
+      <div class="card reveal">
         <p>
           The production need was not just to save measurement data into CSV. The real challenge was to build
           a reliable width-data workflow that could capture measurement values from the machine, log them only during
@@ -69,7 +69,7 @@
 
     <section class="section">
       <h2>Engineering Approach</h2>
-      <div class="card">
+      <div class="card reveal">
         <ul class="phase-list">
           <li>
             <strong>Measurement path validation:</strong> established the communication chain from the width sensor system
@@ -97,7 +97,7 @@
 
     <section class="section">
       <h2>Final Architecture</h2>
-      <div class="card">
+      <div class="card reveal">
         <p>
           The final solution used assigned PLC data over EtherNet/IP rather than relying on FTP as the production data path.
           A background Windows Service handled PLC communication, run detection, logging, and file generation. A separate
@@ -106,7 +106,7 @@
         </p>
       </div>
 
-      <div class="metrics">
+      <div class="metrics reveal">
         <div class="metric">
           <strong>EtherNet/IP</strong>
           <span>Assigned PLC data acquisition for motor-running state, width value, and rewinder position</span>
@@ -128,7 +128,7 @@
 
     <section class="section">
       <h2>Operator Interface and Run Inspection</h2>
-      <div class="card">
+      <div class="card reveal">
         <p>
           To make the system useful beyond background logging, I extended it into an operator-facing tray
           application. The interface was designed for two main use cases: live monitoring during active
@@ -163,7 +163,7 @@
 
     <section class="section">
       <h2>What Was Built</h2>
-      <div class="card">
+      <div class="card reveal">
         <p><strong>Backend / service side</strong></p>
         <ul>
           <li>PLC EtherNet/IP communication</li>
@@ -188,7 +188,7 @@
 
     <section class="section">
       <h2>Result</h2>
-      <div class="card">
+      <div class="card reveal">
         <p>
           The project progressed from a basic measurement-logging task into a structured, operator-ready system.
           The final solution provided reliable EtherNet/IP acquisition, resilient background logging, run-based
@@ -203,7 +203,7 @@
 
     <section class="section">
       <h2>Early Investigation Note</h2>
-      <div class="card">
+      <div class="card reveal">
         <p class="note">
           An initial FTP-based logging path was intentionally explored first to understand native PLC logging behavior,
           transfer timing, and practical limits. That phase was a learning and validation step requested early in the work.
@@ -214,7 +214,7 @@
 
     <section class="section">
       <h2>What This Project Demonstrates</h2>
-      <div class="card">
+      <div class="card reveal">
         <p>
           This project demonstrates systems integration across industrial sensing, PLC data handling, EtherNet/IP communication,
           software reliability, deployment thinking, and operator workflow design. It also shows my preferred engineering path:
