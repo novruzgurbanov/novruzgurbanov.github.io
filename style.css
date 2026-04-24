@@ -384,40 +384,6 @@ strong {
   font-weight: 700;
 }
 
-.project-hero {
-  padding: 28px 0 20px;
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 32px;
-}
-
-.project-hero .eyebrow {
-  margin-bottom: 16px;
-}
-
-.project-hero h1 {
-  font-size: clamp(1.9rem, 2.8vw, 2.7rem);
-  line-height: 1.1;
-  max-width: none;
-  width: 100%;
-  margin-bottom: 16px;
-}
-
-.project-hero p {
-  max-width: 920px;
-  font-size: 1rem;
-}
-
-@media (max-width: 768px) {
-  .project-hero h1 {
-    font-size: clamp(1.7rem, 6vw, 2.2rem);
-    max-width: none;
-    width: 100%;
-  }
-  .project-hero p {
-    font-size: 0.98rem;
-  }
-}
-
 .figure-block {
   margin-top: 22px;
 }
@@ -757,5 +723,41 @@ strong {
 
   .hero-intro {
     font-size: 1.05rem;
+  }
+}
+
+/*Project page title*/
+.project-hero {
+  padding: 28px 0 20px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 32px;
+}
+
+.project-hero .eyebrow {
+  margin-bottom: 16px;
+}
+
+.project-hero h1 {
+  font-size: clamp(1.9rem, 2.8vw, 2.7rem);
+  line-height: 1.1;
+  max-width: none;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.project-hero p {
+  max-width: 920px;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .project-hero h1 {
+    font-size: clamp(1.7rem, 6vw, 2.2rem);
+    max-width: none;
+    width: 100%;
+  }
+
+  .project-hero p {
+    font-size: 0.98rem;
   }
 }
