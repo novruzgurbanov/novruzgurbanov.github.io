@@ -422,3 +422,9 @@ strong {
     margin-top: 32px;
   }
 }
+
+.section p,
+.card p,
+.project-preview p {
+  max-width: 78ch;
+}
