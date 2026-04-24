@@ -761,3 +761,50 @@ strong {
     font-size: 0.98rem;
   }
 }
+
+
+/* ===== REWINDER PAGE POLISH ===== */
+
+.section-compact {
+  padding-top: 28px;
+  padding-bottom: 24px;
+}
+
+.metrics-top {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.metric-number strong {
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.metric-number span {
+  display: block;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.rewinder-figure {
+  max-width: 760px;
+  margin: 22px auto 0;
+}
+
+.rewinder-image {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .metric-number strong {
+    font-size: 1.3rem;
+  }
+
+  .rewinder-figure,
+  .rewinder-image {
+    max-width: 100%;
+  }
+}
